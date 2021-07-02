@@ -1,12 +1,3 @@
-QBCore = nil
-
-Citizen.CreateThread(function()
-    while QBCore == nil do
-        TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-        Citizen.Wait(200)
-    end
-end)
-
 RegisterNetEvent("qb-justice:client:showLawyerLicense")
 AddEventHandler("qb-justice:client:showLawyerLicense", function(sourceId, data)
     local sourcePos = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(sourceId)), false)
