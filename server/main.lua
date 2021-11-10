@@ -1,9 +1,11 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 QBCore.Commands.Add("setlawyer", "Register someone as a lawyer", {{name="id", help="Id of the player"}}, true, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     local playerId = tonumber(args[1])
     local OtherPlayer = QBCore.Functions.GetPlayer(playerId)
     if Player.PlayerData.job.name == "judge" then
-        if OtherPlayer ~= nil then 
+        if OtherPlayer ~= nil then
             local lawyerInfo = {
                 id = math.random(100000, 999999),
                 firstname = OtherPlayer.PlayerData.charinfo.firstname,
